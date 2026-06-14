@@ -1,0 +1,107 @@
+PROJECT OVERVIEW: ID-Link Tanzania
+
+Concept: A secure, digital clearinghouse for lost and found identification documents,
+physically anchored at the Tanzania Post Office, Countrywide.
+
+PART 1: BUSINESS PROPOSAL
+
+1.1 Problem Statement
+
+Every month, hundreds of IDs (NIDA, Voter cards, Licenses) are lost in Tanzania. Currently,
+there is no central database. Owners wander from police stations to bus terminals, while
+finders have no official, rewarded way to return them.
+
+1.2 The Solution
+
+A mobile-responsive web portal where:
+
+    1. Finders (or Postal Staff) digitize found IDs.
+    2. Owners search, verify their identity, and pay a convenience fee.
+    3. The Post Office acts as a secure "Safe Zone" for physical collection.
+
+1.3 Monetization Strategy
+
+     Recovery Fee: 10,000 TZS (Required to generate the "Collection Token").
+     Premium Delivery: 15,000 TZS (Courier delivery via Post Office logistics).
+     Subscription Alerts: 5,000 TZS (One-time fee to get notified if an ID matching your
+
+         number is found in the future).
+     Revenue Share: 20% to the Tanzania Post Corporation; 80% to ID-Link for
+
+         maintenance and profit.
+
+PART 2: TECHNICAL REQUIREMENTS
+SPECIFICATION (TRS)
+
+2.1 System Architecture
+
+     Platform: Mobile-first Web Application (accessible via Chrome/Safari).
+     Language/Framework: React.js or Flutter (Frontend) + Node.js or Python/Django
+
+         (Backend).
+     Database: PostgreSQL (for robust searching and data integrity).
+     Hosting: Local servers (e.g., Arusha-based or TZ-based cloud) to comply with data
+
+         residency laws.
+2.2 Core Modules & Features
+
+A. The Public Search Engine (Owner View)
+
+     Fuzzy Search: Users search by "Name" or "Region Found."
+     Data Masking: Search results must mask sensitive data.
+
+             o Display: Juma H. | NIDA Card | Found: Arusha | ID: 1990********001
+     Claim Logic: To "Unlock" the location/contact, the user must enter the Full ID
+
+         Number. If it matches the database, they proceed to payment.
+
+B. The Finder/Admin Portal (Post Office View)
+
+     OCR Integration: Use Google Vision AI or AWS Rekognition. When the clerk
+         snaps a photo of the ID, the AI automatically extracts:
+             o Full Name
+             o ID Number
+             o Date of Birth (for internal verification only)
+
+     Status Management: Toggle ID status between Logged, Verified, Collected, or
+         Transferred.
+
+C. Payment Integration
+
+     Gateway: Integration with a local aggregator (e.g., Selcom, Pesapal, or AzamPay).
+     Workflow: User hits "Pay" -> Prompted for M-Pesa/Tigo Pesa PIN -> Upon success,
+
+         the Collection QR Code is instantly displayed and emailed.
+
+2.3 Data Security & Compliance
+
+     Encryption: AES-256 encryption for ID numbers stored in the database.
+     Data Retention: Automatic deletion of records 6 months after the "Collected" status
+
+         to minimize data liability.
+     PDPA Compliance: Explicit "Consent to Process Data" checkbox on every form.
+
+PART 3: IMPLEMENTATION ROADMAP
+
+PHASE    MILESTONE                                                  DURATION
+Phase 1                                                             4 Weeks
+Phase 2  Legal & Partnerships: Finalize MoU with Tanzania           8 Weeks
+Phase 3  Post Office; register with PDPC.                           2 Weeks
+Phase 4  MVP Development: Build the database, OCR scanning,         Day 1
+         and Search UI.
+         Beta Testing: Internal testing at the Post Office counter
+         using 50 "dummy" IDs.
+         Public Launch: Social media campaign and physical
+         signage at prime location.
+PART 4: SYSTEM DATA SCHEMA (High-Level)
+
+DEVELOPER ­ Gideon Msambwa
+
+PART 5: NEXT STEPS
+
+    1. Legal: Apply for the Data Controller certificate from the PDPC.
+    2. Financial: Open a business mobile money account (Lipa Namba) to receive fees.
+    3. Technical: Hire a developer to build the "Alpha" version based on the Part 2
+
+         specifications.
+

@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment (contains encryption keys — never commit)
+server/.env
+.env
+
+# Build outputs
+client/dist/
+
+# Uploaded photos
+server/uploads/*
+!server/uploads/.gitkeep
+
+# PostgreSQL data volume
+pgdata/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
