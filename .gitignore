@@ -16,6 +16,9 @@ server/uploads/*
 # PostgreSQL data volume
 pgdata/
 
+# Local-only compose overrides (machine-specific port remaps, etc.)
+docker-compose.override.yml
+
 # OS
 .DS_Store
 Thumbs.db
