@@ -28,15 +28,15 @@ function Alert({ msg }) {
 
 function SettingsRow({ icon: Icon, title, description, children }) {
   return (
-    <div className="grid gap-6 lg:grid-cols-3 lg:gap-10">
-      <div className="lg:pt-1">
+    <div className="grid gap-5 lg:grid-cols-3 lg:gap-8">
+      <div className="rounded-2xl border border-brand-100 bg-brand-50/60 p-5">
         {Icon && (
-          <div className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+          <div className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white text-brand-700 shadow-sm ring-1 ring-brand-100">
             <Icon size={22} />
           </div>
         )}
-        <h3 className="text-lg font-bold text-gray-900">{title}</h3>
-        <p className="mt-1.5 text-sm leading-relaxed text-gray-500">{description}</p>
+        <h3 className="text-base font-bold text-gray-900">{title}</h3>
+        <p className="mt-2 text-sm leading-relaxed text-gray-500">{description}</p>
       </div>
       <div className="lg:col-span-2">{children}</div>
     </div>

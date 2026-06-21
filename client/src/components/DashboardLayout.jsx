@@ -17,7 +17,7 @@ function SidebarContent({ brandSub, nav, activeKey, onNavigate, user, onSignOut,
         </div>
         <div className="leading-tight">
           <p className="text-lg font-bold tracking-tight text-white">ID-Link</p>
-          <p className="text-xs font-medium uppercase tracking-wider text-brand-300">{brandSub}</p>
+          <p className="text-xs font-medium uppercase tracking-wider text-white/55">{brandSub}</p>
         </div>
       </div>
 
