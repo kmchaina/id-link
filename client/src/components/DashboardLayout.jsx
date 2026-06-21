@@ -23,7 +23,7 @@ function SidebarContent({ brandSub, nav, activeKey, onNavigate, user, onSignOut,
 
       {/* Nav */}
       <nav className="flex-1 space-y-1.5 px-3 py-3">
-        <p className="px-3 pb-2 pt-2 text-[11px] font-semibold uppercase tracking-widest text-brand-300/70">
+        <p className="px-3 pb-2 pt-2 text-[11px] font-semibold uppercase tracking-widest text-white/40">
           {t('sidebar_menu')}
         </p>
         {nav.map(({ key, label, icon: Icon }) => {
@@ -34,13 +34,13 @@ function SidebarContent({ brandSub, nav, activeKey, onNavigate, user, onSignOut,
               onClick={() => onNavigate(key)}
               className={`group flex w-full items-center gap-3.5 rounded-xl px-3.5 py-3 text-[15px] font-medium transition-all ${
                 active
-                  ? 'bg-white text-brand-900 shadow-sm'
-                  : 'text-brand-100 hover:bg-white/10 hover:text-white'
+                  ? 'bg-white/20 text-white shadow-sm ring-1 ring-white/25'
+                  : 'text-white/70 hover:bg-white/10 hover:text-white'
               }`}
             >
               <Icon
                 size={20}
-                className={active ? 'text-brand-700' : 'text-brand-200 group-hover:text-white'}
+                className={active ? 'text-white' : 'text-white/50 group-hover:text-white'}
               />
               <span>{label}</span>
             </button>
@@ -56,14 +56,14 @@ function SidebarContent({ brandSub, nav, activeKey, onNavigate, user, onSignOut,
           </div>
           <div className="min-w-0 flex-1 leading-tight">
             <p className="truncate text-sm font-semibold text-white">{user?.full_name || 'Staff'}</p>
-            <p className="truncate text-xs capitalize text-brand-300">
+            <p className="truncate text-xs capitalize text-white/55">
               {user?.role} · {user?.branch_name}
             </p>
           </div>
         </div>
         <button
           onClick={onSignOut}
-          className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 px-3 py-2.5 text-sm font-medium text-brand-100 transition-colors hover:bg-white/10 hover:text-white"
+          className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 px-3 py-2.5 text-sm font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white"
         >
           <IconLogout size={17} />
           {t('sidebar_sign_out')}
